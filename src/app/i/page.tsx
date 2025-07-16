@@ -1,5 +1,6 @@
 'use client'
 import styles from './Page.module.scss'
+import React, { Suspense } from 'react';
 import {useRouter, useSearchParams} from "next/navigation";
 import {useEffect} from "react";
 import {saveTokenStorage} from "@/services/auth/authtoken.service";
@@ -37,18 +38,20 @@ export default function IPage() {
 
     return (
         <>
-            <header className={styles.header}>
-                <div className={styles.inner}>
-                    <Link className={styles.logo} href={'/'}>LOGO</Link>
-                    <div className={styles.right}>
-                        <div className={styles.user}>
-                            <img className={styles.avatar} src={user.avatar} alt="Avatar"/>
-                            <span className={styles.name}>{user.name}</span>
+            <Suspense fallback={<div>Загрузка...</div>}>
+                <header className={styles.header}>
+                    <div className={styles.inner}>
+                        <Link className={styles.logo} href={'/'}>LOGO</Link>
+                        <div className={styles.right}>
+                            <div className={styles.user}>
+                                <img className={styles.avatar} src={user.avatar} alt="Avatar"/>
+                                <span className={styles.name}>{user.name}</span>
+                            </div>
+                            <button onClick={() => logout()} className={styles.logout}>Выйти</button>
                         </div>
-                        <button onClick={() => logout()} className={styles.logout}>Выйти</button>
                     </div>
-                </div>
-            </header>
+                </header>
+            </Suspense>
         </>
     )
 }

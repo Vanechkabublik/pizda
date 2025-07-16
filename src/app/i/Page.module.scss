@@ -1,0 +1,56 @@
+.header {
+  background-color: #4897FF;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user {
+  background-color: #7db6ff;
+  padding: 10px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.name {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.logout {
+  background-color: #e30404;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+}
